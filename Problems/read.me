@@ -1,1 +1,29 @@
+1. struct Node
+Just a standard singly linked list node: one int and a pointer to the next node. No surprises. If this were a plot twist, it’d be the kind you see coming in the first five minutes.
 
+2. createNode
+Allocates memory for a node, sets its data, sets next to NULL, and bails out dramatically if memory fails. Sensible.
+
+3. insertAtEnd
+You walk to the end of the list like someone hunting for the last cookie in the box, then glue the new node there. If the list is empty, the new node becomes the head. Basic and functional.
+
+4. insertAtFourth
+You try to place a node in the 4th position, but your logic actually says:
+“Walk to the 3rd node or until you run out of list, whichever comes first, then insert after it.”
+This means if the list has fewer than 3 nodes, you just stick the new node at the end. Nothing explodes.
+
+5. deleteThird
+You remove the node at position 3. You do a bunch of checks to ensure the list has at least 3 nodes, which is good. Then you splice out the doomed node, free it, and print its value like a tiny eulogy.
+
+6. displayList
+Prints the entire list. If the list is empty, it says so, which at least saves you from staring at a blank line wondering what you did wrong with your life.
+
+7. freeList
+Walks through the list, freeing nodes one by one. It’s the housekeeping your future self will be grateful for.
+
+8. main
+You build the list: 10 → 20 → 30 → 40
+You show it.
+You jam 99 into the 4th spot, so you get: 10 → 20 → 30 → 99 → 40
+Then you delete the third node (which is 30), so it becomes: 10 → 20 → 99 → 40
+Then you clean everything up before exiting.
